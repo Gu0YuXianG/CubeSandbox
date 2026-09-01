@@ -221,7 +221,7 @@ func newProductionControllerDeps(cfg Config) (networkControllerDeps, error) {
 		device:            device,
 		cubeDev:           cubeDev,
 		cubeRouter:        cubeRouter,
-		tapAdapter:        newRealTapDeviceAdapter(),
+		tapAdapter:        newRealTapDeviceAdapter(cfg.CIDR),
 		cubevsAdapter:     newRealCubeVSAdapter(),
 		cubeEgressAdapter: newCubeEgressAdapterFromConfig(cfg),
 	}, nil
